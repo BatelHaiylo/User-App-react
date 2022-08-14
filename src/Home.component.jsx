@@ -1,6 +1,8 @@
 import { Component } from "react";
 import Register from "./Register.component";
 import UserEdit from "./UserEdit.component";
+import UsersTable from "./UsersTable.component";
+import HardCodedUserTable from "./HardCodedUserTable.Component";
 
 export default class Home extends Component{
     constructor(props){
@@ -12,12 +14,10 @@ export default class Home extends Component{
     signUp(){
         console.log(this.state)
         this.setState({isRegistered:true})
-        return <UserEdit fName="Loolo" lName="Tomas" age="20" mail="looloT@blah.boo" password="shhh..1" />
     }
     signIn(){
         console.log(this.state)
         this.setState({isRegistered:false})
-        return <Register/>
     }
     render(){
         return(
@@ -25,7 +25,12 @@ export default class Home extends Component{
                 Home
                 <button onClick={this.signUp}>sign up</button>
                 <button onClick={this.signIn}>sign in</button>
-                <div>{this.state.isRegistered}</div>
+                {(()=>this.state.isRegistered ? <UserEdit fName="Loolo" lName="Tomas" age="20" mail="looloT@blah.boo" password="shhh..1" /> : <Register/>)
+                ()}
+                {/* <UsersTable/> */}
+                <HardCodedUserTable/>
+
+
             </div>
         )
     }

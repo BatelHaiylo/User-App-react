@@ -4,7 +4,7 @@ import Home from "./Home.component";
 function App() {
   return (
     <div class="container d-flex justify-content-center">
-      <User/>
+      {/* <User/> */}
       <Home/>
     </div>
   );

@@ -2,7 +2,7 @@ import { Component } from "react";
 import Register from "./Register.component";
 import UserEdit from "./UserEdit.component";
 import UsersTable from "./UsersTable.component";
-import HardCodedUserTable from "./HardCodedUserTable.Component";
+// import HardCodedUserTable from "./HardCodedUserTable.Component";
 
 export default class Home extends Component{
     constructor(props){
@@ -27,10 +27,8 @@ export default class Home extends Component{
                 <button onClick={this.signIn}>sign in</button>
                 {(()=>this.state.isRegistered ? <UserEdit fName="Loolo" lName="Tomas" age="20" mail="looloT@blah.boo" password="shhh..1" /> : <Register/>)
                 ()}
-                {/* <UsersTable/> */}
-                <HardCodedUserTable/>
-
-
+                <UsersTable/>
+                {/* <HardCodedUserTable/> */}
             </div>
         )
     }
